@@ -1,26 +1,74 @@
-import java.util.HashMap;
+import java.util.*;
 
 public class Q9 {
+/*
+    public static void setApproach(int a[], int b[]){
+    Set<Integer> st = new TreeSet();
+
+    for(int n : a){
+    st.add(n);
+    }
+
+    for(int n : b){
+    st.add(n);
+    }
+
+    ArrayList<Integer> ls = new ArrayList<>(st);
+
+    for(int v : ls){
+    System.out.print(v + " ");
+    }
+    }
+*/
+
+/*
+    public static void pointerApproach(int a[], int b[]) {
+        int n1 = a.length, n2 = b.length;
+        int i = 0, j = 0;
+
+        ArrayList<Integer> union = new ArrayList<>();
+
+        while (i < n1 && j < n2) {
+            if (a[i] <= b[j]) {
+                if (union.size() == 0 || union.getLast() != a[i]) {
+                    union.add(a[i]);
+                }
+                i++;
+            } else {
+                if (union.size() == 0 || union.getLast() != b[j]) {
+                    union.add(b[j]);
+                }
+                j++;
+            }
+        }
+
+        while (i < n1) {
+            if (union.getLast() != a[i] || union.size() == 0) {
+                union.add(a[i]);
+            }
+            i++;
+        }
+
+        while (j < n2) {
+            if (union.getLast() != b[j] || union.size() == 0) {
+                union.add(b[j]);
+            }
+            j++;
+        }
+
+        for(int val : union){
+            System.out.print(val+" ");
+        }
+    }
+ */
+
+
+
     public static void main(String[] args) {
-        int a[] = {1, 2, 3, 4, 5}, b[] = {2, 3, 4, 4, 5};
-        int n = 5, m = 5;
+        int a[] = { 1, 2, 3, 4, 5, 100 }, b[] = { 2, 3, 4, 4, 5, 6, 10 };
 
-        HashMap<Integer, Integer> m1 = new HashMap<>();
-        HashMap<Integer, Integer> m2 = new HashMap<>();
+        // setApproach(a, b);
+        // pointerApproach(a, b);
 
-        // Union
-        for (int i = 0; i < n; i++) {
-            m1.put(a[i], m1.getOrDefault(a[i], 0) + 1);
-        }
-
-        for (int i = 0; i < m; i++) {
-            m2.put(b[i], m2.getOrDefault(b[i], 0) + 1);
-        }
-
-        
-        for (int key : m2.keySet()) {
-            m1.put(key, m1.getOrDefault(key, 0) + 1);
-        }
-        System.out.println("Union is: " + m1.keySet());
     }
 }
