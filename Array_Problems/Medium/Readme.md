@@ -124,7 +124,7 @@ Explanation:
 
 <br><hr><br>
 
-# 5
+# 6
 
 You are given an array prices where prices[i] is the price of a given stock on the ith day.
 
@@ -149,5 +149,222 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 **Constraints:**
 - 1 <= prices.length <= 105
 - 0 <= prices[i] <= 104
+
+<br><hr><br>
+
+# 7
+
+You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
+
+You should return the array of nums such that the array follows the given conditions:
+
+1. Every consecutive pair of integers have opposite signs.
+
+2. For all integers with the same sign, the order in which they were present in nums is preserved.
+
+3. The rearranged array begins with a positive integer.
+
+*Return the modified array after rearranging the elements to satisfy the aforementioned conditions.*
+
+<pre>
+<b>Example 1:</b>
+Input: nums = [3,1,-2,-5,2,-4]
+Output: [3,-2,1,-5,2,-4]
+Explanation:
+The positive integers in nums are [3,1,2]. The negative integers are [-2,-5,-4].
+The only possible way to rearrange them such that they satisfy all conditions is [3,-2,1,-5,2,-4].
+Other ways such as [1,-2,2,-5,3,-4], [3,1,2,-2,-5,-4], [-2,3,-5,1,-4,2] are incorrect because they do not satisfy one or more conditions.  
+
+<b>Example 2:
+</b>
+Input: nums = [-1,1]
+Output: [1,-1]
+Explanation:
+1 is the only positive integer and -1 the only negative integer in nums.
+So nums is rearranged to [1,-1].
+</pre>
+
+**Constraints:**
+- 2 <= nums.length <= 2 * 105
+- nums.length is even
+- 1 <= |nums[i]| <= 105
+- nums consists of equal number of positive and negative integers.
+
+<br><hr><br>
+
+# 8
+
+A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+
+- For example, for arr = [1,2,3], the following are all the permutations of arr: [1,2,3], [1,3,2], [2, 1, 3], [2, 3, 1], [3,1,2], [3,2,1].
+
+<br>
+
+The next permutation of an array of integers is the next lexicographically greater permutation of its integer. More formally, if all the permutations of the array are sorted in one container according to their lexicographical order, then the next permutation of that array is the permutation that follows it in the sorted container. If such arrangement is not possible, the array must be rearranged as the lowest possible order (i.e., sorted in ascending order).
+
+- For example, the next permutation of arr = [1,2,3] is [1,3,2].
+- Similarly, the next permutation of arr = [2,3,1] is [3,1,2].
+- While the next permutation of arr = [3,2,1] is [1,2,3] because [3,2,1] does not have a lexicographical larger rearrangement.
+
+Given an array of integers nums, find the next permutation of nums.
+
+The replacement must be in place and use only constant extra memory.
+
+<pre>
+Example 1:
+
+Input: nums = [1,2,3]
+Output: [1,3,2]
+Example 2:
+
+Input: nums = [3,2,1]
+Output: [1,2,3]
+Example 3:
+
+Input: nums = [1,1,5]
+Output: [1,5,1]
+ 
+</pre>
+
+**Constraints:**
+- 1 <= nums.length <= 100
+- 0 <= nums[i] <= 100
+
+<br><hr><br>
+
+
+## 9
+You are given an array arr of positive integers. Your task is to find all the leaders in the array. An element is considered a leader if it is greater than or equal to all elements to its right. The rightmost element is always a leader.
+
+<pre>
+Example 1:
+Input:
+ arr = [4, 7, 1, 0]  
+Output:
+ 7 1 0  
+Explanation:
+ The rightmost element (0) is always a leader.  
+7 and 1 are greater than the elements to their right, making them leaders as well.
+
+Example 2:
+Input:
+ arr = [10, 22, 12, 3, 0, 6]  
+Output:
+ 22 12 6  
+Explanation:
+ 6 is a leader because there are no elements after it.  
+12 is greater than all the elements to its right (3, 0, 6), and 22 is greater than 12, 3, 0, 6, making them leaders as well.
+</pre>
+
+<br><hr><br>
+
+## 10
+Problem Statement: Given an array nums of n integers.
+
+Return the length of the longest sequence of consecutive integers. The integers in this sequence can appear in any order.
+
+<pre>
+Example 1:
+Input:
+ nums = [100, 4, 200, 1, 3, 2]  
+Output:
+ 4  
+Explanation:
+ The longest sequence of consecutive elements in the array is [1, 2, 3, 4], which has a length of 4. This sequence can be formed regardless of the initial order of the elements in the array.
+
+Example 2:
+Input:
+ nums = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
+Output:
+ 9  
+Explanation:
+ The longest sequence of consecutive elements in the array is [0, 1, 2, 3, 4, 5, 6, 7, 8], which has a length of 9.
+</pre>
+
+<br><hr><br>
+
+## 11
+**Set Matrix Zero**
+
+Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+
+<pre>
+Example 1:
+
+
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+Example 2:
+
+
+Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+</pre>
+
+**Constraints:**
+
+- m == matrix.length
+- n == matrix[0].length
+- 1 <= m, n <= 200
+- -231 <= matrix[i][j] <= 231 - 1
+
+<br><hr><br>
+
+## 12
+**Rotate Image**
+
+You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+
+You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+
+<pre>
+
+Example 1:
+
+
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[7,4,1],[8,5,2],[9,6,3]]
+
+Example 2:
+
+
+Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+
+</pre>
+
+**Constraints:**
+
+- n == matrix.length == matrix[i].length
+- 1 <= n <= 20
+- -1000 <= matrix[i][j] <= 1000
+<br><hr><br>
+
+
+## 11
+**Spiral Matrix**
+
+Given an m x n matrix, return all elements of the matrix in spiral order.
+
+<pre>
+Example 1:
+
+
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [1,2,3,6,9,8,7,4,5]
+
+Example 2:
+
+
+Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+</pre>
+
+**Constraints:**
+
+- m == matrix.length
+- n == matrix[i].length
+- 1 <= m, n <= 10
+- -100 <= matrix[i][j] <= 100
 
 <br><hr><br>

@@ -3,17 +3,19 @@ public class Q6 {
     public static void main(String[] args) {
 
         int[] prices = { 7, 1, 5, 3, 6, 4 };
-        int curr = 1, en = -1, max = Integer.MIN_VALUE, st = 0;
 
-        while (st != prices.length) {
-            if (curr == prices.length) {
-                
-            }
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
 
-            if (curr - st < 0) {
-                curr++;
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price;
+            } else {
+                maxProfit = Math.max(maxProfit, price - minPrice);
             }
         }
+
+        System.out.println(maxProfit);
     }
 
 }
