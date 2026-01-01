@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Q9 {
 /*
     public static void setApproach(int a[], int b[]){
@@ -65,7 +63,7 @@ public class Q9 {
 
 
     public static void main(String[] args) {
-        int a[] = { 1, 2, 3, 4, 5, 100 }, b[] = { 2, 3, 4, 4, 5, 6, 10 };
+        // int a[] = { 1, 2, 3, 4, 5, 100 }, b[] = { 2, 3, 4, 4, 5, 6, 10 };
 
         // setApproach(a, b);
         // pointerApproach(a, b);
