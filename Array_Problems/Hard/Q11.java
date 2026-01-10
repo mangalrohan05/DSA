@@ -9,12 +9,20 @@ public class Q11 {
 
         int cnt = 0;
 
+        int prev = mid + 1;
+
+        for (int i = left; i <= mid; i++) {
+            while (prev <= right && arr[i] > 2L * arr[prev])
+                prev++;
+
+            cnt += (prev - (mid + 1));
+        }
+
         while (l <= mid && r <= right) {
             if (arr[l] <= arr[r]) {
                 temp[k++] = arr[l++];
             } else {
                 temp[k++] = arr[r++];
-                cnt += (mid - l + 1);
             }
         }
 
@@ -42,14 +50,14 @@ public class Q11 {
 
         int mid = (en + st) / 2;
         count += MS(arr, st, mid);
-        count += MS(arr, mid + 1, en);  
+        count += MS(arr, mid + 1, en);
         count += merge(arr, st, mid, en);
 
         return count;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 5, 3, 2, 1, 4 };
+        int arr[] = { 1, 3, 2, 3, 1 };
         int n = arr.length;
 
         int c = MS(arr, 0, n - 1);
