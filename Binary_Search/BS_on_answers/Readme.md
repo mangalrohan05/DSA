@@ -16,3 +16,68 @@ Explanation: Square root of 28 is approximately 5.292. So, the floor value will 
 **Constraints**:
 
 <br><hr><br>
+
+
+## 2
+**Nth Root of a Number using Binary Search**
+
+Problem Statement: Given two numbers N and M, find the Nth root of M. The nth root of a number M is defined as a number X when raised to the power N equals M. If the 'nth root is not an integer, return -1.
+
+
+<pre>
+Input: N = 3, M = 27
+Output: 3
+Explanation: The cube root of 27 is equal to 3.
+Input : N = 4, M = 69
+Output: -1
+Explanation : The 4th root of 69 does not exist. So, the answer is -1.
+</pre>
+
+**Constraints**:
+
+<br><hr><br>
+
+## 3
+**Koko Eating Bananas**
+
+Problem Statement: A monkey Koko is given ‘n’ piles of bananas, whereas the 'ith' pile has ‘a[i]’ bananas. An integer ‘h’ is also given, which denotes the time (in hours) for all the bananas to be eaten.
+
+Each hour, the monkey chooses a non-empty pile of bananas and eats ‘k’ bananas. If the pile contains less than ‘k’ bananas, then the monkey consumes all the bananas and won’t eat any more bananas in that hour.
+
+Find the minimum number of bananas ‘k’ to eat per hour so that the monkey can eat all the bananas within ‘h’ hours.
+
+<pre>
+Input: N = 4, a[] = {7, 15, 6, 3}, h = 8
+Output: 5
+Explanation:  If Koko eats 5 bananas/hr, he will take 2, 3, 2, and 1 hour to eat the piles accordingly. So, he will take 8 hours to complete all the piles.
+
+Input: N = 5, a[] = {25, 12, 8, 14, 19}, h = 5
+Output: 25
+Explanation: If Koko eats 25 bananas/hr, he will take 1, 1, 1, 1, and 1 hour to eat the piles accordingly.
+</pre>
+
+**Constraints**:
+
+<br><hr><br>
+
+## 4
+**Minimum days to make M bouquets**
+
+Problem Statement: You are given 'N’ roses and you are also given an array 'arr' where 'arr[i]' denotes that the 'ith' rose will bloom on the 'arr[i]th' day. You can only pick already bloomed roses that are adjacent to make a bouquet. You are also told that you require exactly 'k' adjacent bloomed roses to make a single bouquet. Find the minimum number of days required to make at least ‘m' bouquets each containing 'k' roses. Return -1 if it is not possible.
+
+<pre>
+Example 1:
+Input Format: N = 8, arr[] = {7, 7, 7, 7, 13, 11, 12, 7}, m = 2, k = 3
+Result: 12
+Explanation: On the 12th the first 4 flowers and the last 3 flowers would have already bloomed. So, we can easily make 2 bouquets, one with the first 3 and another with the last 3 flowers.
+
+Example 2:
+Input Format: N = 5, arr[] = {1, 10, 3, 10, 2}, m = 3, k = 2
+Result: -1
+Explanation: If we want to make 3 bouquets of 2 flowers each, we need at least 6 flowers. But we are given only 5 flowers, so, we cannot make the bouquets.
+</pre>
+
+**Constraints**:
+
+<br><hr><br>
+

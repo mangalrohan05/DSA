@@ -1,5 +1,3 @@
-package BS_on_answers;
-
 public class Q1 {
     public static int sqrt(int N) {
 
