@@ -1,4 +1,4 @@
-public class long_subarr_ksum {
+public class long_subarr_ksum_pos {
     public static void ksum(int arr[], int k) {
         int n = arr.length;
         int i = 0, j = 0, sum = 0, larg = 0;
