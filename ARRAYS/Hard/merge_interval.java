@@ -4,7 +4,6 @@ import java.util.List;
 
 public class merge_interval {
     public static void find_intervals(int intervals[][]) {
-        int n = intervals.length;
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
 
         List<int[]> ls = new ArrayList<>();
