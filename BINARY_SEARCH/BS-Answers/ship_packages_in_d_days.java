@@ -20,7 +20,6 @@ public class ship_packages_in_d_days {
     }
 
     public static int shipWithinDays(int[] weights, int days) {
-        int n = weights.length;
         int left = 0, right = 0;
 
         for (int w : weights) {

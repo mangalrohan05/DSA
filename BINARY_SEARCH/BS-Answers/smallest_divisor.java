@@ -13,7 +13,6 @@ public class smallest_divisor {
     }
 
     public static int smallestDivisor(int[] nums, int threshold) {
-        int n = nums.length;
         int left = 1, right = 0;
         for (int val : nums)
             right = Math.max(val, right);
