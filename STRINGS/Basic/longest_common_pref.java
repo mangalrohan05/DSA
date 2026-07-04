@@ -22,5 +22,6 @@ public class longest_common_pref {
 
     public static void main(String[] args) {
         String words[] = { "abc", "abcde", "abcdef" };
+        System.out.println(longestCommonPrefix(words));
     }
 }
