@@ -31,8 +31,8 @@ public class next_greater_el_II {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = { 4, 1, 2 };
-        int[] nums2 = { 1, 3, 4, 2 };
+        // int[] nums1 = { 4, 1, 2 };
+        // int[] nums2 = { 1, 3, 4, 2 };
 
     }
 }
