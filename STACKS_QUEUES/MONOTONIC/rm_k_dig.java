@@ -45,7 +45,7 @@ public class rm_k_dig {
     public static void main(String[] args) {
         String str = "10200";
         int k = 1;
-        // System.out.println(findRemoved(str, k));
+        System.out.println(findRemoved(str, k));
         System.out.println(4^5^6);
     }
 }
