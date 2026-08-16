@@ -1,29 +1,20 @@
-class Pair {
-    int val;
-    int index;
-
-    Pair(int a, int b) {
-        val = a;
-        index = b;
-    }
-}
-
 class Solution {
     public int[] arrayRankTransform(int[] arr) {
-        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> Integer.compare(a.val, b.val));
+        int res[] = arr.clone();
+        Arrays.sort(res);
 
-        for (int i = 0; i < arr.length; i++)
-            pq.offer(new Pair(arr[i], i));
-
+        HashMap<Integer, Integer> map = new HashMap<>();
         int rank = 1;
 
-        while(!pq.isEmpty()) {
-            Pair curr = pq.poll();
-            arr[curr.index] = rank;
-
-            if (pq.isEmpty() || curr.val != pq.peek().val)
+        for (int i = 0; i < arr.length; i++)
+            if (!map.containsKey(res[i])) {
+                map.put(res[i], rank);
                 rank++;
-        }
+            }
+
+        for(int i = 0; i < arr.length; i++)
+            arr[i] = map.get(arr[i]);
+        
 
         return arr;
     }
