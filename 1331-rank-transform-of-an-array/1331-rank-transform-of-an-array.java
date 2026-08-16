@@ -17,10 +17,11 @@ class Solution {
 
         int rank = 1;
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[pq.peek().index] = rank;
+        while(!pq.isEmpty()) {
+            Pair curr = pq.poll();
+            arr[curr.index] = rank;
 
-            if (pq.size() == 1 || pq.poll().val != pq.peek().val)
+            if (pq.isEmpty() || curr.val != pq.peek().val)
                 rank++;
         }
 
