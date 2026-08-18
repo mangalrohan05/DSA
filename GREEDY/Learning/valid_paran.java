@@ -1,31 +1,39 @@
+import java.util.Stack;
+
 public class valid_paran {
 
     public static boolean isValid(String s) {
 
-        if (s.length() == 0 || s.length() == 1 && s.charAt(0) == '*')
-            return true;
-        else if (s.length() == 1)
-            return false;
+        Stack<Integer> paran = new Stack<>();
+        Stack<Integer> star = new Stack<>();
 
-        int diff = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
 
-        for (char c : s.toCharArray()) {
             if (c == '(')
-                diff++;
-            else if (c == ')')
-                diff--;
-            if (c == '*' && diff > 0)
-                diff--;
+                paran.push(i);
+            else if (c == '*')
+                star.push(i);
+            else if (c == ')') {
+                if (!paran.isEmpty())
+                    paran.pop();
+                else if (!star.isEmpty())
+                    star.pop();
+                else
+                    return false;
+            }
         }
 
-        if(diff != 0)
-            return false;
+        while (!paran.isEmpty() && !star.isEmpty()) {
+            if (paran.pop() > star.pop())
+                return false;
+        }
 
-        return true;
+        return paran.isEmpty();
     }
 
     public static void main(String[] args) {
-        String s = "*)";
+        String s = "((*)";
         System.out.println(isValid(s));
     }
 }
