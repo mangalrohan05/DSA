@@ -18,28 +18,14 @@ class Solution {
         if (root == null)
             return true;
 
-        Deque<TreeNode> q = new LinkedList<>();
+        return verify(root.left, root.right);
+    }
 
-        q.offer(root.left);
-        q.offer(root.right);
+    public boolean verify(TreeNode l, TreeNode r){
+        if(l == null && r == null) return true;
 
-        while (!q.isEmpty()) {
-            TreeNode l = q.poll();
-            TreeNode r = q.poll();
+        if(l == null || r == null) return false;
 
-            if (l == null &&  r == null)
-                continue;
-
-            if (l == null ||  r == null || l.val != r.val)
-                return false;
-
-            q.offer(l.left);
-            q.offer(r.right);
-
-            q.offer(l.right);
-            q.offer(r.left);
-        }
-        
-        return true;
+        return(l.val == r.val && verify(l.left, r.right) && verify(l.right, r.left));
     }
 }
