@@ -1,30 +1,32 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
-class Node {
-    int val;
-    Node left;
-    Node right;
+public class LCA {
+    static HashMap<Integer, Node> map = new HashMap<>();
 
-    Node(int val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
-    }
-}
+    public static Node lowestCommonAncestor(Node root, Node p, Node q) {
+        ArrayList<Integer> path_p = new ArrayList<>();
+        findRoot(root, p.val, path_p);
 
-public class path {
+        ArrayList<Integer> path_q = new ArrayList<>();
+        findRoot(root, q.val, path_q);
 
-    public static ArrayList<Integer> findPath(Node root, int target) {
-        ArrayList<Integer> path = new ArrayList<>();
-        findRoot(root, target, path);
-        return path;
+        int i = 0;
+        
+        while (path_p.get(i) == path_q.get(i))
+            i++;
+
+        return map.get(path_p.get(i-1));
+
     }
 
     public static boolean findRoot(Node root, int target, ArrayList<Integer> path) {
         if (root == null)
             return false;
 
-        path.add(root.val); 
+        map.put(root.val, root);
+
+        path.add(root.val);
 
         if (root.val == target)
             return true;
@@ -54,7 +56,7 @@ public class path {
         root.left.right.left = new Node(6);
         root.left.right.right = new Node(8);
 
-        ArrayList<Integer> path = findPath(root, 7);
-        System.out.println(path.reversed());
+        Node res = lowestCommonAncestor(root, root.left.left, root.left.right.right);
+        System.out.println(res.val);
     }
 }
